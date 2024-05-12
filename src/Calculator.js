@@ -37,6 +37,11 @@ function Calculator({ workouts, allowSound }) {
     playSound();
   }, [duration, allowSound]);
 
+  //closure effect
+  useEffect(() => {
+    document.title = `Your ${number}- excercise workout`;
+  }, [number]);
+
   function handleInc() {
     setDuration((duration) => Math.floor(duration + 1));
     // playSound();
